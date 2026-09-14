@@ -378,7 +378,7 @@ export default function Portfolio() {
             "User-friendly Mobile UI",
           ],
           techStack: ["Flutter", "Dart", "Firebase"],
-          github: "https://github.com/ccirdec/asset-management-system",
+          github: "https://github.com/ccirdec/sabuo",
           demo: "https://youtu.be/aPt-HwhW2KU?si=FR7IdinRx2kpMR0j"
         },
         {
@@ -593,7 +593,7 @@ export default function Portfolio() {
             "Antarmuka Mobile Modern",
           ],
           techStack: ["Flutter", "Dart", "Firebase"],
-          github: "https://github.com/ccirdec/asset-management-system",
+          github: "https://github.com/ccirdec/sabuo",
           demo: "https://youtu.be/aPt-HwhW2KU?si=FR7IdinRx2kpMR0j"
         },
         {
