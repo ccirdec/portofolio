@@ -13,6 +13,7 @@ import {
   X,
   ChevronLeft,
   Menu,
+  Award,
 } from "lucide-react";
 
 // --- CUSTOM SOCIAL ICONS ---
@@ -99,6 +100,7 @@ const DeviceSlider = ({ type, images }: { type: string; images: string[] }) => {
       </div>
     );
   }
+
   return (
     <div className="flex flex-col items-center shrink-0">
       <div className="w-[300px] sm:w-[400px] h-[200px] sm:h-[250px] bg-slate-900 rounded-t-xl border-[6px] border-slate-800 relative shadow-2xl flex items-center justify-center">
@@ -159,7 +161,6 @@ const PhotoSlider = ({ images }: { images: string[] }) => {
       ) : (
         <div className="text-slate-400 font-medium">Foto Dokumentasi</div>
       )}
-
       {hasMultiple && (
         <>
           <button
@@ -185,7 +186,7 @@ export default function Portfolio() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [filter, setFilter] = useState("All");
   const [activeView, setActiveView] = useState<"home" | "about" | "projects">(
-    "home",
+    "home"
   );
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [infoModal, setInfoModal] = useState<any | null>(null);
@@ -223,7 +224,7 @@ export default function Portfolio() {
         title: "Education",
         univ: {
           name: "Pakuan University",
-          degree: "Bachelor of Computer Science   Sep 2022 - Jul 2026",
+          degree: "Bachelor of Computer Science • Sep 2022 - Jul 2026",
           score: "GPA: 3.97 / 4.00 (Cum Laude)",
         },
         sma: {
@@ -261,14 +262,12 @@ export default function Portfolio() {
         },
       },
       experience: {
-        title: "Experience & Certificate",
+        title: "Experience",
         intern: {
           role: "IT Intern",
-          desc: "PT. Communication Cable System Tbk   Jul 2025 - Sep 2025",
-        },
-        cert: {
-          role: "Fundamental Deep Learning",
-          desc: "NVIDIA Deep Learning Institute   Jul 2026",
+          desc: "PT. Communication Cable System Tbk • Jul 2025 - Sep 2025",
+          project: "Asset Management System",
+          projectDesc: "Web-based Enterprise Application",
         },
         modalData: {
           type: "experience",
@@ -280,9 +279,46 @@ export default function Portfolio() {
           projectName: "Web-based Asset Management System",
           projectDesc:
             "Developed an enterprise-scale web application to digitalize internal asset management. Designed to track equipment history, prevent asset loss, and generate structured reports, streamlining the overall administrative pipeline.",
-          certTitle: "Fundamental Deep Learning - NVIDIA Institute",
-          certDesc:
-            "Acquired hands-on competency in constructing, training, and deploying deep learning neural network architectures using modern machine learning frameworks.",
+        },
+      },
+      certificates: {
+        title: "Certifications",
+        list: [
+          {
+            title: "Fundamental Deep Learning",
+            issuer: "NVIDIA Deep Learning Institute",
+            date: "Jul 2026",
+            desc: "Acquired hands-on competency in constructing, training, and deploying deep learning neural network architectures using modern machine learning frameworks.",
+          },
+          {
+            title: "Google Data Analysis with Python",
+            issuer: "Google",
+            date: "Oct 2026 - Oct 2026",
+            desc: "This program aims to equip participants with practical data analysis skills through basic Python programming, functions, loops, data structures, to cleaning and exploring raw data. Competencies include Python, NumPy, pandas, and Jupyter Notebooks for professional data analysis, and EDA techniques.",
+          },
+          {
+            title: "SQL FOUNDATION",
+            issuer: "Microsoft",
+            date: "Oct 2026 - Oct 2026",
+            desc: "Provides foundational understanding and data processing skills using SQL authorized by Microsoft. Covers basic SQL concepts, data retrieval, manipulation, and relational queries.",
+          },
+          {
+            title: "TIM MAHASISWA KAMPUS BERDAMPAK",
+            issuer: "Hibah Nasional Kemendiktisaintek",
+            date: "Feb 2026 - Nov 2026",
+            desc: "National Grant from Kemendiktisaintek for the Assisted Village Empowerment Program (PDB) titled: Desa Edu-Wisata Parakanjaya. Focused on the transformation of Parakanjaya Village into a sustainable Smart Edu-Tourism Economy area.",
+          },
+          {
+            title: "Introduction to R Programming for Data Science",
+            issuer: "IBM",
+            date: "Oct 2026 - Nov 2026",
+            desc: "Training in R programming for data science using RStudio and Jupyter Notebooks. Mastering primitive data types processing, R data structures, applying functions, control flow, string/Regex operations, error handling, and data I/O and web scraping techniques.",
+          },
+        ],
+        modalData: {
+          type: "certificates",
+          title: "Certifications & Awards",
+          images: ["", ""],
         },
       },
       projects: [
@@ -326,7 +362,7 @@ export default function Portfolio() {
           categories: ["Deep Learning", "Web Development"],
           type: "web",
           desc: "A web-based intelligent travel planner integrating RNN, CPI, and ACO algorithms.",
-          icon: <Map className="w-6 h-6" />,
+          icon: <Map className="w-6 h-6" /> ,
           images: [
             "/stp/Picture33.png",
             "/stp/Picture34.png",
@@ -343,7 +379,7 @@ export default function Portfolio() {
             "Destination Scoring (CPI)",
           ],
           techStack: ["Next.js", "Open-Meteo API"],
-          github: "https://github.com/ccirdec/smart-tourism"
+          github: "https://github.com/ccirdec/smart-tourism",
         },
         {
           id: 3,
@@ -379,7 +415,7 @@ export default function Portfolio() {
           ],
           techStack: ["Flutter", "Dart", "Firebase"],
           github: "https://github.com/ccirdec/sabuo",
-          demo: "https://youtu.be/aPt-HwhW2KU?si=FR7IdinRx2kpMR0j"
+          demo: "https://youtu.be/aPt-HwhW2KU?si=FR7IdinRx2kpMR0j",
         },
         {
           id: 4,
@@ -415,7 +451,7 @@ export default function Portfolio() {
             "User Profile Management",
           ],
           techStack: ["Flutter", "Dart", "Firebase"],
-          github: "https://github.com/ccirdec/discorso"
+          github: "https://github.com/ccirdec/discorso",
         },
       ],
     },
@@ -428,7 +464,7 @@ export default function Portfolio() {
       heroHighlight: "Digital",
       heroDesc:
         "Hai, saya Cedric Mitchell Yehaziel. Lulusan Ilmu Komputer yang memadukan pengembangan Web Full-Stack, Aplikasi Mobile, dan penerapan algoritma Machine Learning.",
-      coreTech: "Tekensi Utama",
+      coreTech: "Teknologi Utama",
       modal: {
         overview: "Ringkasan",
         features: "Fitur Utama",
@@ -439,7 +475,7 @@ export default function Portfolio() {
         title: "Pendidikan",
         univ: {
           name: "Universitas Pakuan",
-          degree: "Sarjana Ilmu Komputer   Sep 2022 - Jul 2026",
+          degree: "Sarjana Ilmu Komputer • Sep 2022 - Jul 2026",
           score: "IPK: 3.97 / 4.00 (Cum Laude)",
         },
         sma: { name: "SMA Budi Mulia Bogor", period: "Juli 2019 - Mei 2022" },
@@ -474,14 +510,12 @@ export default function Portfolio() {
         },
       },
       experience: {
-        title: "Pengalaman & Sertifikat",
+        title: "Pengalaman",
         intern: {
           role: "IT Intern",
-          desc: "PT. Communication Cable System Tbk   Jul 2025 - Sep 2025",
-        },
-        cert: {
-          role: "Fundamental Deep Learning",
-          desc: "NVIDIA Deep Learning Institute   Jul 2026",
+          desc: "PT. Communication Cable System Tbk • Jul 2025 - Sep 2025",
+          project: "Asset Management System",
+          projectDesc: "Aplikasi Web Skala Perusahaan",
         },
         modalData: {
           type: "experience",
@@ -493,9 +527,46 @@ export default function Portfolio() {
           projectName: "Web-based Asset Management System",
           projectDesc:
             "Membangun sistem informasi berbasis web skala perusahaan untuk mendigitalisasi alur pengelolaan aset. Sistem dirancang untuk melacak riwayat inventaris, meminimalkan kehilangan aset, dan mencetak laporan terstruktur guna mempermudah bagian administrasi.",
-          certTitle: "Fundamental Deep Learning - NVIDIA Institute",
-          certDesc:
-            "Mendapatkan kompetensi praktis dalam merancang, melatih, serta menerapkan arsitektur neural network menggunakan standar teknologi AI modern.",
+        },
+      },
+      certificates: {
+        title: "Sertifikat",
+        list: [
+          {
+            title: "Fundamental Deep Learning",
+            issuer: "NVIDIA Deep Learning Institute",
+            date: "Jul 2026",
+            desc: "Mendapatkan kompetensi praktis dalam merancang, melatih, serta menerapkan arsitektur neural network menggunakan standar teknologi AI modern.",
+          },
+          {
+            title: "Google Data Analysis with Python",
+            issuer: "Google",
+            date: "Oktober 2026 - Oktober 2026",
+            desc: "Program ini bertujuan membekali peserta dengan keterampilan praktis analisis data melalui materi pemrograman Python dasar, fungsi, loops, struktur data, hingga pembersihan dan eksplorasi data mentah. Dari pelatihan ini, kompetensi yang diperoleh mencakup penguasaan Python, NumPy, pandas, dan Jupyter Notebooks untuk analisis data profesional, serta kemampuan menerapkan teknik exploratory data analysis (EDA), pembersihan, validasi, dan penarikan insight pada dataset dunia nyata.",
+          },
+          {
+            title: "SQL FOUNDATION",
+            issuer: "Microsoft",
+            date: "Oktober 2026 - Oktober 2026",
+            desc: "Pelatihan ini bertujuan memberikan pemahaman awal dan keterampilan fondasi pengolahan data menggunakan SQL yang diotorisasi oleh Microsoft. Materi yang dipelajari mencakup konsep dasar Structured Query Language, pengambilan data (retrieval), manipulasi data, dan kueri relasional, sehingga peserta memperoleh kompetensi dalam mengelola, memfilter, serta mengambil data dari sistem basis data.",
+          },
+          {
+            title: "TIM MAHASISWA KAMPUS BERDAMPAK",
+            issuer: "Hibah Nasional Kemendiktisaintek",
+            date: "Februari 2026 - November 2026",
+            desc: "Hibah Nasional Kemendiktisaintek Skema Program Pemberdayaan Desa Binaan (PDB) yang berjudul : Desa Edu-Wisata Parakanjaya : Penguatan Produksi, Manajemen, dan Lingkungan Kelompok Batik, Bumdes, menuju Smart Edu-Tourism Economy Berkelanjutan Tahun 2026. Program ini berfokus pada transformasi Desa Parakanjaya menjadi kawasan Smart Edu-Tourism Economy yang berkelanjutan melalui pendekatan multidisiplin.",
+          },
+          {
+            title: "Introduction to R Programming for Data Science",
+            issuer: "IBM",
+            date: "Oktober 2026 - November 2026",
+            desc: "Pelatihan dalam pemrograman R untuk data science menggunakan RStudio dan Jupyter Notebooks. Menguasai pemrosesan tipe data primitif dan struktur data R (vectors, factors, lists, data frames), penerapan fungsi, alur kendali (conditions & loops), operasi string/Regex, error handling, serta teknik I/O data dan web scraping.",
+          },
+        ],
+        modalData: {
+          type: "certificates",
+          title: "Daftar Sertifikat",
+          images: ["", ""],
         },
       },
       projects: [
@@ -556,8 +627,8 @@ export default function Portfolio() {
             "Penilaian Destinasi (CPI)",
             "Visualisasi Peta Interaktif",
           ],
-          techStack: [ "Next.js", "Open-Meteo API"],
-          github: "https://github.com/ccirdec/smart-tourism"
+          techStack: ["Next.js", "Open-Meteo API"],
+          github: "https://github.com/ccirdec/smart-tourism",
         },
         {
           id: 3,
@@ -589,12 +660,11 @@ export default function Portfolio() {
           features: [
             "Pemantauan Stok Multi-Cabang",
             "Opsi Delivery & Self-Pickup",
-
             "Antarmuka Mobile Modern",
           ],
           techStack: ["Flutter", "Dart", "Firebase"],
           github: "https://github.com/ccirdec/sabuo",
-          demo: "https://youtu.be/aPt-HwhW2KU?si=FR7IdinRx2kpMR0j"
+          demo: "https://youtu.be/aPt-HwhW2KU?si=FR7IdinRx2kpMR0j",
         },
         {
           id: 4,
@@ -630,7 +700,7 @@ export default function Portfolio() {
             "Manajemen Profil Pengguna",
           ],
           techStack: ["Flutter", "Dart", "Firebase"],
-          github: "https://github.com/ccirdec/discorso"
+          github: "https://github.com/ccirdec/discorso",
         },
       ],
     },
@@ -643,6 +713,7 @@ export default function Portfolio() {
     "Mobile Development",
     "Deep Learning",
   ];
+
   const filteredProjects =
     filter === "All"
       ? t.projects
@@ -669,7 +740,6 @@ export default function Portfolio() {
               .
             </span>
           </h1>
-
           <div className="flex items-center gap-4 md:gap-6">
             {/* Menu Desktop */}
             <ul
@@ -694,6 +764,7 @@ export default function Portfolio() {
                 {t.nav.projects}
               </li>
             </ul>
+
             {/* Toggle Bahasa */}
             <div
               onClick={() => setLang(lang === "id" ? "en" : "id")}
@@ -713,6 +784,7 @@ export default function Portfolio() {
                 EN
               </span>
             </div>
+
             {/* Tombol Hamburger Mobile */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -766,7 +838,6 @@ export default function Portfolio() {
           <header className="relative pt-12 pb-24 md:pt-24 md:pb-36 px-6 md:px-12 text-center min-h-[85vh] flex flex-col justify-center overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-transparent"></div>
-
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase mb-8 shadow-sm">
                 <span className="relative flex h-3 w-3">
@@ -775,7 +846,6 @@ export default function Portfolio() {
                 </span>
                 {t.heroBadge}
               </div>
-
               <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight text-slate-900 leading-tight">
                 {t.heroTitle} <br className="md:hidden" /> {t.heroSub}{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -785,7 +855,6 @@ export default function Portfolio() {
               <p className="text-lg md:text-xl font-medium text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
                 {t.heroDesc}
               </p>
-
               <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
                 <button
                   onClick={() => setActiveView("projects")}
@@ -801,7 +870,6 @@ export default function Portfolio() {
                   {t.nav.about}
                 </button>
               </div>
-
               <div className="pt-8 border-t border-slate-200/60 max-w-3xl mx-auto">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
                   {t.coreTech}
@@ -832,7 +900,7 @@ export default function Portfolio() {
 
         {/* --- VIEW: ABOUT ME --- */}
         {activeView === "about" && (
-          <section className="px-6 md:px-12 max-w-5xl mx-auto py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <section className="px-6 md:px-12 max-w-6xl mx-auto py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-slate-200 border-8 border-white shadow-xl overflow-hidden shrink-0 mx-auto md:mx-0">
                 <img
@@ -844,7 +912,6 @@ export default function Portfolio() {
               <div>
                 <h3 className="text-3xl font-bold mb-4">{t.nav.about}</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">{t.bio}</p>
-
                 <div className="flex gap-4">
                   <a
                     href="mailto:cedric.my04@gmail.com"
@@ -875,7 +942,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Kartu Edukasi (Klik untuk pop-up) */}
               <div
                 onClick={() => setInfoModal(t.education.modalData)}
@@ -889,7 +956,7 @@ export default function Portfolio() {
                   <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                 </div>
                 <div className="mb-4">
-                  <h5 className="font-bold">{t.education.univ.name}</h5>
+                  <h5 className="font-bold line-clamp-1">{t.education.univ.name}</h5>
                   <p className="text-sm text-slate-500">
                     {t.education.univ.degree}
                   </p>
@@ -898,7 +965,7 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <div>
-                  <h5 className="font-bold">{t.education.sma.name}</h5>
+                  <h5 className="font-bold line-clamp-1">{t.education.sma.name}</h5>
                   <p className="text-sm text-slate-500">
                     {t.education.sma.period}
                   </p>
@@ -918,17 +985,58 @@ export default function Portfolio() {
                   <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                 </div>
                 <div className="mb-6">
-                  <h5 className="font-bold">{t.experience.intern.role}</h5>
+                  <h5 className="font-bold line-clamp-1">{t.experience.intern.role}</h5>
                   <p className="text-sm text-slate-500">
                     {t.experience.intern.desc}
                   </p>
                 </div>
                 <div>
-                  <h5 className="font-bold">{t.experience.cert.role}</h5>
+                  <h5 className="font-bold line-clamp-1">{t.experience.intern.project}</h5>
                   <p className="text-sm text-slate-500">
-                    {t.experience.cert.desc}
+                    {t.experience.intern.projectDesc}
                   </p>
                 </div>
+              </div>
+
+              {/* Kartu Sertifikat (Klik untuk pop-up) */}
+              <div
+                onClick={() =>
+                  setInfoModal({
+                    ...t.certificates.modalData,
+                    list: t.certificates.list,
+                  })
+                }
+                className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all cursor-pointer group"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <Award className="text-blue-600 w-6 h-6" />
+                    <h4 className="font-bold text-xl">{t.certificates.title}</h4>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                </div>
+                <div className="mb-6">
+                  <h5 className="font-bold line-clamp-1">
+                    {t.certificates.list[0].title}
+                  </h5>
+                  <p className="text-sm text-slate-500">
+                    {t.certificates.list[0].issuer}
+                  </p>
+                </div>
+                <div>
+                  <h5 className="font-bold line-clamp-1">
+                    {t.certificates.list[1].title}
+                  </h5>
+                  <p className="text-sm text-slate-500">
+                    {t.certificates.list[1].issuer}
+                  </p>
+                </div>
+                {t.certificates.list.length > 2 && (
+                  <p className="text-sm text-blue-600 font-semibold mt-4">
+                    + {t.certificates.list.length - 2}{" "}
+                    {lang === "en" ? "more" : "lainnya"}
+                  </p>
+                )}
               </div>
             </div>
           </section>
@@ -948,7 +1056,6 @@ export default function Portfolio() {
                 </button>
               ))}
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((proj) => (
                 <div
@@ -967,13 +1074,9 @@ export default function Portfolio() {
                       {proj.desc}
                     </p>
                   </div>
-
                   <div className="absolute inset-0 bg-slate-900/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 backdrop-blur-sm">
                     <div className="scale-75 pointer-events-none">
-                      <DeviceSlider
-                        type={proj.type}
-                        images={[proj.images[0]]}
-                      />
+                      <DeviceSlider type={proj.type} images={[proj.images[0]]} />
                     </div>
                     <div className="absolute bottom-6 bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
                       {t.btnMore}
@@ -986,7 +1089,7 @@ export default function Portfolio() {
         )}
       </div>
 
-      {/* --- POP-UP MODAL INFO (Edukasi & Pengalaman) --- */}
+      {/* --- POP-UP MODAL INFO (Edukasi, Pengalaman, & Sertifikat) --- */}
       {infoModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-5xl max-h-[95vh] rounded-[2rem] overflow-hidden flex flex-col lg:flex-row relative shadow-2xl">
@@ -996,14 +1099,21 @@ export default function Portfolio() {
             >
               <X className="w-6 h-6" />
             </button>
-
-            {/* Bagian Kiri: Photo Slider */}
-            <div className="w-full lg:w-5/12 bg-slate-50 relative flex items-center justify-center p-8 border-r border-slate-100 min-h-[300px]">
-              <PhotoSlider images={infoModal.images} />
-            </div>
-
+            {/* Bagian Kiri: Photo Slider (hanya dirender jika ada gambar valid) */}
+            {infoModal.images && infoModal.images[0] !== "" ? (
+              <div className="w-full lg:w-5/12 bg-slate-50 relative flex items-center justify-center p-8 border-r border-slate-100 min-h-[300px]">
+                <PhotoSlider images={infoModal.images} />
+              </div>
+            ) : (
+              <div className="w-full lg:w-4/12 bg-slate-50 relative flex flex-col items-center justify-center p-8 border-r border-slate-100 min-h-[200px] lg:min-h-full">
+                {infoModal.type === "education" && <GraduationCap className="w-24 h-24 text-blue-100 mb-4" />}
+                {infoModal.type === "experience" && <Briefcase className="w-24 h-24 text-blue-100 mb-4" />}
+                {infoModal.type === "certificates" && <Award className="w-24 h-24 text-blue-100 mb-4" />}
+              </div>
+            )}
+            
             {/* Bagian Kanan: Text Content */}
-            <div className="w-full lg:w-7/12 p-8 lg:p-12 overflow-y-auto max-h-[50vh] lg:max-h-[95vh]">
+            <div className={`w-full ${infoModal.images && infoModal.images[0] !== "" ? "lg:w-7/12" : "lg:w-8/12"} p-8 lg:p-12 overflow-y-auto max-h-[50vh] lg:max-h-[95vh]`}>
               <h3 className="text-3xl font-black text-slate-900 mb-8">
                 {infoModal.title}
               </h3>
@@ -1053,19 +1163,28 @@ export default function Portfolio() {
                       {infoModal.projectDesc}
                     </p>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">
-                      {lang === "en" ? "Certification" : "Sertifikasi"}
-                    </h4>
-                    <h5 className="text-lg font-bold text-slate-800">
-                      {infoModal.certTitle}
-                    </h5>
-                    <p className="text-slate-600 leading-relaxed text-sm mt-2">
-                      {infoModal.certDesc}
-                    </p>
-                  </div>
                 </>
               )}
+
+              {/* Jika tipe Certificates */}
+              {infoModal.type === "certificates" &&
+                infoModal.list.map((cert: any, i: number) => (
+                  <div
+                    key={i}
+                    className="mb-8 relative pl-6 border-l-2 border-blue-100"
+                  >
+                    <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1.5 ring-4 ring-white"></div>
+                    <h4 className="text-lg font-bold text-slate-800">
+                      {cert.title}
+                    </h4>
+                    <p className="text-sm font-semibold text-blue-600 mb-2">
+                      {cert.issuer} • {cert.date}
+                    </p>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {cert.desc}
+                    </p>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -1081,7 +1200,6 @@ export default function Portfolio() {
             >
               <X className="w-6 h-6" />
             </button>
-
             <div className="w-full lg:w-1/2 bg-slate-100 relative flex items-center justify-center p-8 lg:p-12 min-h-[400px]">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-indigo-600/10"></div>
               <div className="relative z-10 w-full flex justify-center">
@@ -1091,7 +1209,6 @@ export default function Portfolio() {
                 />
               </div>
             </div>
-
             <div className="w-full lg:w-1/2 p-8 lg:p-12 overflow-y-auto max-h-[50vh] lg:max-h-[95vh]">
               <div className="inline-flex gap-2 mb-4">
                 {selectedProject.categories.map((c: string) => (
@@ -1106,32 +1223,56 @@ export default function Portfolio() {
               <h3 className="text-3xl font-black text-slate-900 mb-6">
                 {selectedProject.title}
               </h3>
-
               <div className="flex flex-wrap gap-3 mb-8">
-  {selectedProject.github && (
-    <a 
-      href={selectedProject.github} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 9 18v4"></path></svg>
-      GitHub Repo
-    </a>
-  )}
-  {selectedProject.demo && (
-    <a 
-      href={selectedProject.demo} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-      Demo
-    </a>
-  )}
-</div>
-
+                {selectedProject.github && (
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 9 18v4"></path>
+                    </svg>
+                    GitHub Repo
+                  </a>
+                )}
+                {selectedProject.demo && (
+                  <a
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Demo
+                  </a>
+                )}
+              </div>
               <div className="mb-8">
                 <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">
                   {t.modal.overview}
@@ -1140,7 +1281,6 @@ export default function Portfolio() {
                   {selectedProject.fullDesc}
                 </p>
               </div>
-
               <div className="mb-8">
                 <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">
                   {t.modal.features}
@@ -1157,7 +1297,6 @@ export default function Portfolio() {
                   ))}
                 </ul>
               </div>
-
               <div>
                 <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">
                   {t.modal.tech}
